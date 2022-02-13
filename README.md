@@ -1,5 +1,8 @@
 #  React and Firebase Blog App
 
+## Hosting Url
+https://q-blog-9406b.web.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
