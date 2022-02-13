@@ -1,0 +1,16 @@
+.signin{
+    margin: 20px 0px 20px 20px;
+}
+.signin > button > img{
+    width: 40px;
+    margin: 0 5px;
+}
+.signin > button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid black
+}

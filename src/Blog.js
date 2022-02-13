@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react'
 import db from './Firebase'
 import { collection,getDocs,addDoc,query} from "firebase/firestore";
 import {getDatabase,ref,orderByChild } from "firebase/database";
-
 import Post from './Post'
-
+import './blog.css'
 
 function Blog() {
 
@@ -51,18 +50,24 @@ function Blog() {
             <h1>Welcome to blog</h1>
             <form action = '.'>
                 <input type='text' value={author} onChange = {event => setAuthor(event.target.value)} placeholder = 'enter author name'/><br></br>
-                <textarea rows = '4' cols = '50' value = {post} onChange = {event => setPost(event.target.value)} placeholder = 'author blog'/><br></br>
-                <button type= "submit" onClick={sendPost}>Submit post</button>
+                <textarea rows = '10' cols = '80' value = {post} onChange = {event => setPost(event.target.value)} placeholder = 'author blog'/><br></br>
+                <button className='submit_button' type= "submit" onClick={sendPost}>Submit post</button>
             </form>
             <div className='blog_posts'>
-                {
+                <table className='blog_posts_table'>
+                    <tr>
+                        <th>Author</th>
+                        <th>Blog</th>
+                    </tr>
+                    {
                     posts.map(post => (
                         <Post author = {post.author} post = {post.post}/>
                     ))
                 }
+                </table>
             </div>
             <div>
-                <button onClick = {filterPost}>Filter by author</button>
+                <button className='submit_button' onClick = {filterPost}>Filter by author</button>
             </div>
         </div>
     )
