@@ -5,6 +5,10 @@ https://q-blog-9406b.web.app/
 
 ## Available Scripts
 
+In the project directory, you can run to install the packages:
+
+### `npm install`
+
 In the project directory, you can run:
 
 ### `npm start`
