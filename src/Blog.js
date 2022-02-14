@@ -13,6 +13,7 @@ function Blog() {
     
 
     const filterPost = (event) => {
+        event.preventDefault()
         const db = getDatabase();
         const sortAuthor = query(ref(db, 'posts'), orderByChild('author'));
         console.log(sortAuthor)
@@ -35,15 +36,15 @@ function Blog() {
             const ref = collection(db,'posts')
             getDocs(ref).then((snapshot) => {
                 let blogs = []
-                snapshot.docs.map((doc) => {
+                snapshot.docs.map((doc) => (
                     blogs.push({...doc.data()})
-                })
+                    ))
                 setPosts(blogs)
             })
             .catch(err => {
                 console.log(err.message)
             })
-    }, [])
+    }, [posts])
         
     return (
         <div className='blog'>
